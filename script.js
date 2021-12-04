@@ -3,10 +3,16 @@
 let table = document.getElementById('table');
 let myLibrary = [];
 
+const createBook = document.getElementById('createBookBtn');
+
+//default book list in library array
 const dragonBall = new Book('Dragon Ball', 'Akira Toriyama', '42 Vols', 'Read');
 const onePiece = new Book('One Piece', 'Eiichiro Oda', '101 Vols - ongoing', 'Read');
 const kingInBlack = new Book('King In Black', 'Donny Cates', '5 Vols', 'Read');
 myLibrary.push(dragonBall, onePiece, kingInBlack);
+
+//eventlisteners
+createBook.addEventListener('click', addBookToLibrary);
 
 //loops the array then insert objects inside table
 for(let obj of myLibrary){
@@ -28,8 +34,14 @@ function Book(title, author, pages, read){
  }
 }
 
-function addBookToLibrary(){
- 
+function addBookToLibrary(newBook){
+ let titleInput = document.getElementById('titleInput');
+ let authorInput = document.getElementById('authorInput');
+ let pagesInput = document.getElementById('pagesInput');
+ let readInput = document.getElementById('readInput');
+
+ newBook = new Book(titleInput.innerText, authorInput.innerText, pagesInput.innerText, readInput.innerText);
+ myLibrary.push(newBook);
 }
 
 function openForm(){
