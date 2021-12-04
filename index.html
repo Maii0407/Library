@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="reset.css" media="all">
+    <link rel="stylesheet" href="main.css" media="all">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <table id="table">
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Pages/Volumes</th>
+            <th>Reading Status</th>
+        </tr>
+    </table>
+    <div class="form" id="newBookForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>New Book</h1>
+            <label for="title"><b>Book Title</b></label>
+            <input type="text" placeholder="Enter Book Title" name="title" required>
+            <label for="author"><b>Author Name</b></label>
+            <input type="text" placeholder="Enter Author Name" name="author" required>
+            <label for="pages"><b>Pages/Volumes</b></label>
+            <input type="text" placeholder="Enter No. of Pages or Volumes" name="pages" required>
+            <label for="read"><b>Reading Status</b></label>
+            <input type="text" placeholder="Read or Not Read" name="read" required>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div class="open-button" onclick="openForm()">Open</div>
+</div>
+    
+</body>
+</html>
