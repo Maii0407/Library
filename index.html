@@ -15,7 +15,6 @@
         <tr>
             <th>Book Title</th>
             <th>Author</th>
-            <th>Pages/Volumes</th>
             <th>Reading Status</th>
         </tr>
     </table>
@@ -23,14 +22,12 @@
         <form class="form-container">
             <h1>New Book</h1>
             <label for="title"><b>Book Title</b></label>
-            <input type="text" placeholder="Enter Book Title" name="title" id="titleInput" required>
+            <input type="text" placeholder="Enter Book Title" id="titleInput" required>
             <label for="author"><b>Author Name</b></label>
-            <input type="text" placeholder="Enter Author Name" name="author" id="authorInput" required>
-            <label for="pages"><b>Pages/Volumes</b></label>
-            <input type="text" placeholder="Enter No. of Pages or Volumes" name="pages" id="pagesInput" required>
+            <input type="text" placeholder="Enter Author Name" id="authorInput" required>
             <label for="read"><b>Reading Status</b></label>
-            <input type="text" placeholder="Read or Not Read" name="read" id="readInput" required>
-            <button type="submit" class="btn" id="createBookBtn">Submit</button>
+            <input type="text" placeholder="Read or Not Read" id="readInput" required>
+            <button type="button" class="btn" id="createBookBtn">Submit</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
