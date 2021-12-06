@@ -7,6 +7,7 @@ const createBook = document.getElementById('createBookBtn');
 const titleInput = document.getElementById('titleInput');
 const authorInput = document.getElementById('authorInput');
 const readInput = document.getElementById('readInput');
+const readBtn = document.getElementById('readBtn');
 
 //default book list in library array
 const dragonBall = new Book('Dragon Ball', 'Akira Toriyama', 'Read');
@@ -22,17 +23,14 @@ for(let obj of myLibrary){
     let row = table.insertRow();
     row.insertCell().textContent = obj.title;
     row.insertCell().textContent = obj.author;
-    row.insertCell().textContent = obj.read;
+    row.insertCell().innerHTML = `<button id='readBtn'>${obj.read}</button>`
 }
 
 //functions
 function Book(title, author, read){
- this.title = title;
- this.author = author;
- this.read = read;
- this.info = function(){
-     return title + ' by ' +  author + ', ' + read;
- }
+ this.title = title.toUpperCase();
+ this.author = author.toUpperCase();
+ this.read = read.toUpperCase();
 }
 
 function addBookToLibrary(newBook){
@@ -40,15 +38,14 @@ function addBookToLibrary(newBook){
  myLibrary.push(newBook);
 
  let row = table.insertRow();
- row.insertCell().textContent = titleInput.value;
- row.insertCell().textContent = authorInput.value;
- row.insertCell().textContent = readInput.value;
+ row.insertCell().textContent = titleInput.value.toUpperCase();
+ row.insertCell().textContent = authorInput.value.toUpperCase();
+ row.insertCell().innerHTML = `<button id='readBtn'>${readInput.value.toUpperCase()}</button>`;
 
  closeForm();
  titleInput.value = '';
  authorInput.value = '';
  readInput.value = '';
-
 }
 
 function openForm(){
@@ -59,4 +56,4 @@ function closeForm(){
     document.getElementById('newBookForm').style.display = 'none';
 }
 
-console.log(myLibrary);
+console.table(myLibrary);

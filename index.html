@@ -26,12 +26,15 @@
             <label for="author"><b>Author Name</b></label>
             <input type="text" placeholder="Enter Author Name" id="authorInput" required>
             <label for="read"><b>Reading Status</b></label>
-            <input type="text" placeholder="Read or Not Read" id="readInput" required>
-            <button type="button" class="btn" id="createBookBtn">Submit</button>
+            <select id="readInput">
+                <option value="read">Read</option>
+                <option value="not read">Not Read</option>
+            </select>
+            <button type="button" class="btn" id="createBookBtn">Add Book</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-    <div class="open-button" onclick="openForm()">Open</div>
+    <div class="open-button" onclick="openForm()">+ New Book</div>
 </div>
     
 </body>
