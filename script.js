@@ -1,3 +1,11 @@
+//class to make new books
+class Book {
+    constructor(title, author, read){
+        this.title = title;
+        this.author = author;
+        this.read = read;
+    }
+}
 
 //variables
 let table = document.getElementById('table');
@@ -24,13 +32,7 @@ for(let obj of myLibrary){
     row.insertCell().innerHTML = `<button class='readBtn' onclick="change(this)">${obj.read}</button> <button class="deleteBtn" onclick='removeRow(this)'>X</button>`
 }
 
-//functions
-function Book(title, author, read){
- this.title = title.toUpperCase();
- this.author = author.toUpperCase();
- this.read = read.toUpperCase();
-}
-
+//funtions
 function addBookToLibrary(newBook){
  newBook = new Book(titleInput.value, authorInput.value, readInput.value);
  myLibrary.push(newBook);
